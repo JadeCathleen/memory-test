@@ -22,3 +22,5 @@ class CustomerTest < ActiveSupport::TestCase
     assert_not customer.errors[:cutomer_code].empty?
   end
 end
+
+#
