@@ -1,5 +1,0 @@
-one:
-  customer: customers(:one)
-  user: users(:regular)
-  order_code: 'test'
-  order_date: Time.now
