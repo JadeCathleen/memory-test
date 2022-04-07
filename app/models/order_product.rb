@@ -3,4 +3,8 @@ class OrderProduct < ApplicationRecord
   belongs_to :product
 
   validates :product_quantity, presence: true
+
+  def revenue
+    product_quantity * product.price
+  end
 end

@@ -1,3 +1,9 @@
-one :
+one:
   product_code: ptest1
   product_description: Product Test
+  price: 5.99
+
+two:
+  product_code: ptest2
+  product_description: Product Test 2
+  price: 3.57

@@ -24,4 +24,11 @@ class OrderProductTest < ActiveSupport::TestCase
     order_product.valid?
     assert_not order_product.errors[:product].empty?
   end
+
+  # check instance method revenue
+  test "#revenue returns the correct revenue" do
+    order_product = OrderProduct.new(product: products(:one), product_quantity: 2)
+
+    assert_equal(order_product.revenue, 11.98)
+  end
 end

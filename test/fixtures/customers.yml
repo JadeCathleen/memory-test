@@ -1,3 +1,11 @@
 one:
   customer_code: ctest1
   country: France
+
+two:
+  customer_code: ctest2
+  country: United Kingdom
+
+three:
+  customer_code: ctest3
+  country: France
