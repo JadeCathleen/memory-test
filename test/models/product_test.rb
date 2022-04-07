@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
-  # Check the presence of each columns of Product Table
+  # Check the presence of each columns of Products Table
   test "invalid if it has no product_code" do
     product = Product.new(product_description: "test", price: 9.99)
     product.valid?

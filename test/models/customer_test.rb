@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CustomerTest < ActiveSupport::TestCase
-  # Check the presence of each columns of Customer Table
+  # Check the presence of each columns of Customers Table
   test "invalid if it has no customer_code" do
     customer = Customer.new(country: "France")
     customer.valid?
