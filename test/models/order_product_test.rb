@@ -18,7 +18,7 @@ class OrderProductTest < ActiveSupport::TestCase
   end
 
   test "invalid if it has no product attached" do
-    order = Order.new(order_code: 'test',user: users(:regular), customer: customers(:one), order_date: Time.now)
+    order = Order.new(order_code: 'test', user: users(:regular), customer: customers(:one), order_date: Time.now)
     order_product = OrderProduct.new(order: order, product_quantity: 2)
 
     order_product.valid?
