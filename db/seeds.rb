@@ -8,14 +8,14 @@
 
 require 'csv'
 
-if Rails.env.development?
-  puts "Cleaning database..."
-  OrderProduct.destroy_all
-  Order.destroy_all
-  User.destroy_all
-  Customer.destroy_all
-  Product.destroy_all
-end
+# if Rails.env.development?
+#   puts "Cleaning database..."
+#   OrderProduct.destroy_all
+#   Order.destroy_all
+#   User.destroy_all
+#   Customer.destroy_all
+#   Product.destroy_all
+# end
 user = User.create(email: 'test@test.com', password: '123456')
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
@@ -42,5 +42,5 @@ CSV.foreach(Rails.root.join(data_filepath), csv_options) do |row|
   order_product = OrderProduct.where(order: order, product: product)
   OrderProduct.create(order: order, product: product, product_quantity: row['quantity']) if order_product.nil?
 
-  puts "Reached ligne #{i} in #{Time.now - initial_time}" if (i % 1000).zero?
+  puts "Reached line #{i} in #{Time.now - initial_time}" if (i % 1000).zero?
 end
