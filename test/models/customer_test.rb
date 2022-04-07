@@ -15,12 +15,10 @@ class CustomerTest < ActiveSupport::TestCase
   end
 
   # Check the uniqueness of customer_code
-  test "customer_code is unique for each product" do
+  test "customer_code is unique for each customer" do
     Customer.create(customer_code: "test", country: "France")
     customer = Customer.new(customer_code: "test", country: "UK")
     customer.valid?
-    assert_not customer.errors[:cutomer_code].empty?
+    assert_not customer.errors[:customer_code].empty?
   end
 end
-
-#
