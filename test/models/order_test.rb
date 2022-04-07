@@ -25,4 +25,12 @@ class OrderTest < ActiveSupport::TestCase
     order.valid?
     assert_not order.errors[:customer].empty?
   end
+
+  # Check the uniqueness of order_code (order_id in csv)
+  test "invalid if the order code already exists" do
+    Order.create(order_code: "test", customer: customers(:one), user: users(:regular), order_date: Time.now)
+    order = Order.new(order_code: "test", customer: customers(:two), user: users(:regular), order_date: Time.now)
+    order.valid?
+    assert_not order.errors[:order_code].empty?
+  end
 end

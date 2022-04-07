@@ -5,4 +5,5 @@ class Order < ApplicationRecord
   has_many :products, through: :order_products
 
   validates :order_code, :order_date, presence: true
+  validates :order_code, uniqueness: true
 end
