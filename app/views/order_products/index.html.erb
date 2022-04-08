@@ -2,11 +2,19 @@
   <h1>Country</h1>
 
   <h1>Summary</h1>
-  <div class="card">
-    <h4>Total Revenue</h4>
-    <%= @order_products %>
-    <% raise %>
+  <div class="cards d-flex justify-content-between align-items-center my-4">
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Total Revenue</h4>
+      <p><%= number_to_human @total_revenue %>€</p>
+    </div>
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Avg. Revenue / order</h4>
+      <p><%= number_to_human @average_by_order %>€</p>
+    </div>
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Number of unique customers</h4>
+      <p><%= number_to_human @customer_count %> customers</p>
+    </div>
   </div>
   <h1>Revenue per month</h1>
 </div>
-<!-- -->
