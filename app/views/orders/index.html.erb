@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Country</h1>
+
+  <h1>Summary</h1>
+  <div class="cards d-flex justify-content-between align-items-center my-4">
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Total Revenue</h4>
+      <p><%= number_to_human @total_revenue %>€</p>
+    </div>
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Avg. Revenue / order</h4>
+      <p><%= number_to_human @average_by_order %>€</p>
+    </div>
+    <div class="card d-flex flex-column justify-content-between align-items-center">
+      <h4>Nb. of customers</h4>
+      <p><%= number_to_human @customer_count %> customers</p>
+    </div>
+  </div>
+  <h1>Revenue per month</h1>
+    <ul>
+      <li>January: <%= number_to_human @revenue_by_month[0] %>€</li>
+      <li>February: <%= number_to_human @revenue_by_month[1] %>€</li>
+      <li>March: <%= number_to_human @revenue_by_month[2] %>€</li>
+      <li>April: <%= number_to_human @revenue_by_month[3] %>€</li>
+      <li>May: <%= number_to_human @revenue_by_month[4] %>€</li>
+      <li>June: <%= number_to_human @revenue_by_month[5] %>€</li>
+      <li>July: <%= number_to_human @revenue_by_month[6] %>€</li>
+      <li>August: <%= number_to_human @revenue_by_month[7] %>€</li>
+      <li>September: <%= number_to_human @revenue_by_month[8] %>€</li>
+      <li>October: <%= number_to_human @revenue_by_month[9] %>€</li>
+      <li>November: <%= number_to_human @revenue_by_month[10] %>€</li>
+      <li>December: <%= number_to_human @revenue_by_month[11] %>€</li>
+    </ul>
+</div>
