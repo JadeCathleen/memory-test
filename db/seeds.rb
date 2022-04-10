@@ -9,7 +9,7 @@ if Rails.env.development?
   Product.destroy_all
   puts 'Cleaning finished'
 end
-user = User.create(email: 'test@test.com', password: '123456')
+user = User.create(email: 'test@test.com', password: '123456', admin: true)
 
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
