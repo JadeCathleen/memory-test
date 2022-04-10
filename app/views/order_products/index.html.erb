@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="country-selector d-flex justify-content-around align-items-center" data-controller="country" data-country-url="<%= order_products_filter_path %>">
+  <div class="country-selector d-flex justify-content-start align-items-center my-4" data-controller="country" data-country-url="<%= order_products_filter_path %>">
     <h1>Country</h1>
-    <select class="form-select ml-2" name='countries' aria-label="Default select example" data-action="change->country#selectCountry" data-country-target="form">
+    <select class="form-select" name='countries' aria-label="Default select example" data-action="change->country#selectCountry" data-country-target="form">
       <option value="all" selected>All</option>
       <% @countries.each do |country| %>
         <option value="<%= country %>"><%= country %></option>
@@ -13,5 +13,4 @@
     <div class="right-col" data-country-target="infos">
       <%= render partial: 'infos', locals: {total_revenue: @total_revenue, average_by_order: @average_by_order, customer_count: @customer_count} %>
     </div>
-  </div>
 </div>
