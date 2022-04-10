@@ -1,7 +1,8 @@
 ## 🏆 Full-Stack Engineer Technical Challenge - In The Memory
 
 Please find below the schema of DB that I used :
-<img src="https://github.com/JadeCathleen/memory-test/blob/master/app/assets/images/memory-test-schema-db.png?raw=true" width="400" />
+
+<img src="https://github.com/JadeCathleen/memory-test/blob/master/app/assets/images/memory-test-schema-db.png?raw=true" width="400" height="400" />
 
 Type of columns : yellow -> integers or floats, red -> strings
 
@@ -29,8 +30,9 @@ The three following metrics are present and calculated in the dashboard:
 - Average revenue per order
 - Number of unique customers
 
-Please find below the screen on all orders
-<img src="https://github.com/JadeCathleen/memory-test/blob/master/app/assets/images/memory-test-screen.png?raw=true" width="400" />
+Please find below the screen on all orders :
+
+<img src="https://github.com/JadeCathleen/memory-test/blob/master/app/assets/images/memory-test-screen.png?raw=true" width="400" height="400" />
 
 For the filter by country exercise, unfortunately the web app does not access the correct partial, so it does not work.
 
