@@ -1,6 +1,13 @@
 <div class="container">
-  <h1>Country</h1>
-
+  <div class="country-selector d-flex justify-content-around align-items-center">
+    <h1>Country</h1>
+    <select class="form-select" aria-label="Default select example">
+      <option value="all" selected>All</option>
+      <% @countries.each do |country| %>
+        <option value="<%= country %>"><%= country %></option>
+      <% end %>
+    </select>
+  </div>
   <h1>Summary</h1>
   <div class="cards d-flex justify-content-between align-items-center my-4">
     <div class="card d-flex flex-column justify-content-between align-items-center">
@@ -17,5 +24,5 @@
     </div>
   </div>
   <h1>Revenue per month</h1>
-  <p></p>
+
 </div>
