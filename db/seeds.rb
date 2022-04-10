@@ -25,7 +25,12 @@ CSV.foreach(Rails.root.join(data_filepath), csv_options) do |row|
 
   # Create the product - it will only be saved if product code does not exist yet (validity unit test)
   product = Product.where(product_code: row['product_code']).first
-  product = Product.create(product_code: row['product_code'], product_description: row['product_description'], price: row['unit_price']) if product.nil?
+  # p product
+  if product.nil?
+    product = Product.new(product_code: row['product_code'], product_description: row['product_description'], price: row['unit_price'])
+    product.save!
+    # p product
+  end
 
   # Create the order - it will only be saved if order code (order_id in CSV) does not exist yet (validity unit test)
   order = Order.where(order_code: row['order_id']).first
