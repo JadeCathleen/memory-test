@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="country-selector d-flex justify-content-around align-items-center">
+  <div class="country-selector d-flex justify-content-around align-items-center" data-controller="country" data-country-url="<%= order_products_filter_path %>">
     <h1>Country</h1>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select ml-2" name='countries' aria-label="Default select example" data-action="change->country#selectCountry" data-country-target="form">
       <option value="all" selected>All</option>
       <% @countries.each do |country| %>
         <option value="<%= country %>"><%= country %></option>
@@ -10,19 +10,8 @@
   </div>
   <h1>Summary</h1>
   <div class="cards d-flex justify-content-between align-items-center my-4">
-    <div class="card d-flex flex-column justify-content-between align-items-center">
-      <h4>Total Revenue</h4>
-      <p><%= number_to_human @total_revenue %>€</p>
-    </div>
-    <div class="card d-flex flex-column justify-content-between align-items-center">
-      <h4>Avg. Revenue / order</h4>
-      <p><%= number_to_human @average_by_order %>€</p>
-    </div>
-    <div class="card d-flex flex-column justify-content-between align-items-center">
-      <h4>Nb. of customers</h4>
-      <p><%= number_to_human @customer_count %> customers</p>
+    <div class="right-col" data-country-target="infos">
+      <%= render partial: 'infos', locals: {total_revenue: @total_revenue, average_by_order: @average_by_order, customer_count: @customer_count} %>
     </div>
   </div>
-  <h1>Revenue per month</h1>
-
 </div>
